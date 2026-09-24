@@ -59,7 +59,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 "headline":"2026 中国怎么用 ChatGPT / Claude / Gemini？注册、防封号与网络环境手册",
 "inLanguage":"zh-CN",
 "datePublished":"2026-09-21",
-"dateModified":"2026-09-21",
+"dateModified":"2026-09-24",
 "author":{"@type":"Person","name":"AI 访问手册"},
 "description":"在中国大陆稳定使用 ChatGPT、Claude、Gemini：注册要点、封号原因与防封清单、常见报错对照表、网络环境选择。"
 }
@@ -83,7 +83,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <div class="wrap">
 <h1>2026 中国怎么用 <em>ChatGPT / Claude / Gemini</em>？<br>注册、防封号与网络环境手册</h1>
 <p>能看 YouTube 不代表能用 ChatGPT——AI 平台对网络的判定标准完全不同。这份手册整理了在国内使用三大 AI 工具的完整打法：注册要点、封号原因、报错排查、网络环境怎么选。</p>
-<div class="meta">最后核实：2026 年 9 月 21 日 · 长期更新，欢迎收藏 ⭐ · <a href="https://github.com/chinesevpn/chatgpt-vpn-guide">GitHub 版</a></div>
+<div class="meta">最后核实：2026 年 9 月 24 日 · 长期更新，欢迎收藏 ⭐ · <a href="https://github.com/chinesevpn/chatgpt-vpn-guide">GitHub 版</a></div>
 </div>
 </header>
 
@@ -91,6 +91,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 
 <nav class="toc">
 <strong>目录</strong>
+<p style="margin:0 0 8px"><a href="#news">▸ 最新：AI 访问动态（持续更新）</a></p>
 <ol>
 <li><a href="#why">AI 工具对网络的要求，和看视频完全不是一回事</a></li>
 <li><a href="#signup">注册：三家各自的要点</a></li>
@@ -101,6 +102,26 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <li><a href="#faq">常见问题 FAQ</a></li>
 </ol>
 </nav>
+
+<section id="news">
+<h2>AI 访问动态（持续更新）</h2>
+<p class="note">这里记录和「在国内用 AI 工具」直接相关的新变化，以及它对你意味着什么。新的在上，旧的往下沉。</p>
+<div class="card">
+<h3>2026-09-24｜Claude Code 被扒出暗查时区和代理，这件事给普通用户上了一课</h3>
+<p>先说事情本身。今年 7 月初，有开发者在 Claude Code（Anthropic 的命令行编程工具）的客户端里扒出一段混淆过的代码：它会检查电脑的系统时区是不是 Asia/Shanghai 或 Asia/Urumqi，再把你配置的代理地址和一份写死的名单比对，据报道名单里有阿里、百度、蚂蚁、字节等公司的标识。查出来的结果不会弹窗告诉你，而是藏进发回服务器的系统提示里——改一下日期格式、换一个标点符号，肉眼完全看不出来。</p>
+<p>消息传开后，Anthropic 的工程师出来解释：这是 3 月上线的一个实验，目的是防止账号被转售、防止模型被「蒸馏」，移除这段代码的改动已经在 7 月 1 日合并。阿里巴巴没买账，7 月 10 日起全员禁用 Claude Code，让员工改用自家的 Qoder。</p>
+<p>我关心的不是大厂之间的恩怨，而是这件事把 AI 公司风控的「隐形维度」摊开给所有人看了：<strong>它们判断你从哪来，看的从来不只是 IP</strong>。</p>
+<p>本手册<a href="#signup">注册那一节</a>一直在说「浏览器时区、语言和 IP 地区不要打架」，以前这只是经验推断——IP 在日本、系统时区却是上海，这种矛盾「可能」会被风控注意到。现在有了实锤：至少有一家头部公司真的在客户端层面采集过时区，而且是悄悄采集。</p>
+<p><strong>几点实际建议：</strong></p>
+<ul>
+<li><strong>代码删了，不等于这个维度没人看了。</strong>时区、系统语言、locale 这些信号采集成本极低，随时可以换个方式重新收集，也不止一家公司能这么做。</li>
+<li><strong>最省事的做法：专门用来跑 AI 工具的那台设备，系统时区跟着你常用的出口节点走。</strong>节点固定在东京，时区就设东京。浏览器界面语言保留中文问题不大，关键是时区和 IP 别两头对不上。</li>
+<li><strong>别过度恐慌。</strong>这次的机制瞄准的是转售和蒸馏这类批量滥用；个人正常使用，封号风险的大头仍然是<a href="#ban">第三节</a>说的 IP 污染。先把出口 IP 弄干净，比纠结时区更要紧。</li>
+<li><strong>用 Claude Code、Cursor 这类开发工具的朋友多留个心眼</strong>：命令行工具能读到的本机信息，比网页多得多。</li>
+</ul>
+<p style="font-size:13px;color:var(--muted)">本期参考：<a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/alibaba-bans-anthropics-claude-code-after-an-alleged-hidden-china-detection-backdoor-is-uncovered-employees-told-to-switch-to-qoder-as-the-rift-between-the-firms-widens" rel="nofollow">Tom's Hardware</a> · <a href="https://the-decoder.com/hidden-code-in-claude-code-secretly-flagged-chinese-users/" rel="nofollow">The Decoder</a> · <a href="https://www.cnbc.com/2026/07/06/alibaba-anthropic-ai-ban-claude-china.html" rel="nofollow">CNBC</a></p>
+</div>
+</section>
 
 <section id="why">
 <h2>一、AI 工具对网络的要求，和看视频完全不是一回事</h2>
