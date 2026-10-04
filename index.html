@@ -59,7 +59,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 "headline":"2026 中国怎么用 ChatGPT / Claude / Gemini？注册、防封号与网络环境手册",
 "inLanguage":"zh-CN",
 "datePublished":"2026-09-21",
-"dateModified":"2026-09-24",
+"dateModified":"2026-10-04",
 "author":{"@type":"Person","name":"AI 访问手册"},
 "description":"在中国大陆稳定使用 ChatGPT、Claude、Gemini：注册要点、封号原因与防封清单、常见报错对照表、网络环境选择。"
 }
@@ -72,6 +72,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 {"@type":"Question","name":"为什么能看 YouTube，ChatGPT 却打不开？","acceptedAnswer":{"@type":"Answer","text":"视频网站只要求网络连通，AI 平台还会做 IP 风控：判定 IP 的所属地区和信誉分（共用人数、滥用记录）。线路能连通但 IP 不干净或地区判定混乱，就会出现打不开、弹验证、注册提示地区不支持等问题。"}},
 {"@type":"Question","name":"ChatGPT 一直弹 Cloudflare 人机验证怎么办？","acceptedAnswer":{"@type":"Answer","text":"这是 IP 信誉分过低的典型症状，根源是共用该 IP 的人太多太杂。换共用人数少、更干净的网络出口是治本办法，清 Cookie 或换浏览器只能治标。"}},
 {"@type":"Question","name":"ChatGPT / Claude 账号被封还能救回来吗？","acceptedAnswer":{"@type":"Answer","text":"可以走官方申诉表单，如实说明用途。IP 污染类封号有一定申诉成功率，支付欺诈类基本无法恢复。申诉期间不要用同一网络环境注册新账号。"}},
+{"@type":"Question","name":"淘宝、群里卖的 Claude / ChatGPT 中转、镜像站、共享号能用吗？","acceptedAnswer":{"@type":"Answer","text":"不建议。无法确认对面接的是不是正版模型，数据和 API 密钥也不在自己手里；Anthropic 2026 年 9 月的报告披露过以便宜 Claude 为幌子、偷换模型并窃取账号凭据的团伙。"}},
 {"@type":"Question","name":"在中国用 ChatGPT 选什么样的网络工具？","acceptedAnswer":{"@type":"Answer","text":"AI 场景只看三个指标：出口 IP 干不干净（共用人数）、地区稳不稳定、断线恢复快不快。免费 VPN 共用人数太多基本不可用；选择时确认：有免费试用、能固定地区、有智能分流、断线自动重连、找得到客服。"}}
 ]
 }
@@ -83,7 +84,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <div class="wrap">
 <h1>2026 中国怎么用 <em>ChatGPT / Claude / Gemini</em>？<br>注册、防封号与网络环境手册</h1>
 <p>能看 YouTube 不代表能用 ChatGPT——AI 平台对网络的判定标准完全不同。这份手册整理了在国内使用三大 AI 工具的完整打法：注册要点、封号原因、报错排查、网络环境怎么选。</p>
-<div class="meta">最后核实：2026 年 9 月 24 日 · 长期更新，欢迎收藏 ⭐ · <a href="https://github.com/chinesevpn/chatgpt-vpn-guide">GitHub 版</a></div>
+<div class="meta">最后核实：2026 年 10 月 4 日 · 长期更新，欢迎收藏 ⭐ · <a href="https://github.com/chinesevpn/chatgpt-vpn-guide">GitHub 版</a></div>
 </div>
 </header>
 
@@ -106,6 +107,22 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <section id="news">
 <h2>AI 访问动态（持续更新）</h2>
 <p class="note">这里记录和「在国内用 AI 工具」直接相关的新变化，以及它对你意味着什么。新的在上，旧的往下沉。</p>
+<div class="card">
+<h3>2026-10-04｜Anthropic 9 月安全报告：低价 Claude 中转是怎么坑人的</h3>
+<p>9 月 11 日前后，Anthropic 发了一份滥用情况报告，覆盖去年 12 月到今年 8 月。报告很长，大部分是网络攻击和舆论操纵，和在国内用 AI 的普通人有关的，我挑出三件。</p>
+<p><strong>一是一个卖「便宜 Claude」的团伙。</strong>报告里编号 GTG-50021 的案例：一个讲俄语和乌克兰语的团伙，打着「打折 Claude」的旗号卖访问。买家以为自己用的是 Claude，实际请求被悄悄转给了另一个模型；更狠的是，对方让买家装的工具里藏着凭据窃取程序，把买家的 Anthropic 账号凭据和 API 密钥偷走，再转卖给其他中转商。这个团伙不是冲着中国用户来的，但这个套路国内一点都不陌生：各种「Claude 中转」「镜像站」「共享号」，你没法确认对面接的是不是正版模型，也没法确认你的数据和密钥去了哪。</p>
+<p><strong>二是七家中国公司被点名「蒸馏」。</strong>报告点名阿里、DeepSeek、月之暗面、智谱、小米、商汤、MiniMax，指它们用大批虚假账号调用 Claude，拿输出训练自家模型。据中文律所的解读，单阿里一家在 5 到 7 月就被统计到约 1.5 亿次请求、3500 多个欺诈账号，这些账号多数靠盗用的信用卡、登录凭据和 API 密钥批量注册。这些都是 Anthropic 单方面的调查结论，被点名的公司目前没有公开回应。</p>
+<p><strong>三是湖南两名大学生用 Claude 做网络攻击。</strong>报告说两名在校本科生把 Claude 当成「工程和调度层」，对全球约五十家机构做侦察和入侵，还挖出了安全产品的零日漏洞。Anthropic 封了相关账号，并加了监控来识别类似行为。</p>
+<p>对普通用户意味着什么？我的判断是：AI 公司对「批量注册、经过中转、来源可疑」这几类账号和流量的识别只会越来越严，而这几类恰好和很多人图便宜走的路子重合。</p>
+<p><strong>几点实际建议：</strong></p>
+<ul>
+<li><strong>别用来路不明的低价中转和镜像站。</strong>便宜的背后，要么是盗刷卡开的号，随时被封；要么像上面那样，顺手偷你的密钥。</li>
+<li><strong>别装中转商给的客户端、插件、「一键配置脚本」。</strong>GTG-50021 的窃密程序就是这么进来的。</li>
+<li><strong>不买共享号、成品号。</strong>批量注册的号本来就是风控清理的重点。自己注册、自己付费，付费方式见<a href="#pay">充值避坑</a>，出口 IP 固定，见<a href="#ban">封号原因</a>。</li>
+<li><strong>API 密钥别发给任何人，定期轮换。</strong>发现账单异常，第一时间在后台作废旧密钥。</li>
+</ul>
+<p style="font-size:13px;color:var(--muted)">本期参考：<a href="https://www.anthropic.com/threat-intelligence-report-september-2026" rel="nofollow">Anthropic 威胁报告（2026 年 9 月）</a> · <a href="https://www.getechlaw.com.cn/blog/anthropic-threat-report-sep-2026-ai-misuse" rel="nofollow">格知律所解读</a> · <a href="https://www.aljazeera.com/news/2026/9/11/anthropic-claims-claude-ai-used-for-missile-projects-global-espionage" rel="nofollow">Al Jazeera</a></p>
+</div>
 <div class="card">
 <h3>2026-09-24｜Claude Code 被扒出暗查时区和代理，这件事给普通用户上了一课</h3>
 <p>先说事情本身。今年 7 月初，有开发者在 Claude Code（Anthropic 的命令行编程工具）的客户端里扒出一段混淆过的代码：它会检查电脑的系统时区是不是 Asia/Shanghai 或 Asia/Urumqi，再把你配置的代理地址和一份写死的名单比对，据报道名单里有阿里、百度、蚂蚁、字节等公司的标识。查出来的结果不会弹窗告诉你，而是藏进发回服务器的系统提示里——改一下日期格式、换一个标点符号，肉眼完全看不出来。</p>
@@ -219,6 +236,8 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <p>可以走官方申诉表单，如实说明用途。IP 污染类有一定成功率，支付欺诈类基本救不回。申诉期间别用同一网络环境注册新号。</p></details>
 <details><summary>一个号全家共享行不行？</summary>
 <p>不建议，多人异地同时在线是明确风控信号。选支持多设备的网络方案让每人自己注册，比共享账号安全得多。</p></details>
+<details><summary>淘宝、群里卖的 Claude / ChatGPT 中转、镜像站、共享号能用吗？</summary>
+<p>不建议。你没法确认对面接的是不是正版模型，数据和密钥也不在你手里；Anthropic 2026 年 9 月的报告就披露过打着「便宜 Claude」旗号、实际偷换模型还偷账号凭据的团伙。见上面的 <a href="#news">AI 访问动态</a>。</p></details>
 <details><summary>敏感时期（十一、重要会议）AI 工具也会受影响吗？</summary>
 <p>会，因为你的网络出口会受影响。规律是敏感日期前一周开始收紧，节后回落。节前把时长充好、备好备用线路。</p></details>
 </section>
@@ -227,6 +246,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 
 <footer class="wrap">
 <p>本手册长期更新，发现新的风控变化欢迎到 <a href="https://github.com/chinesevpn/chatgpt-vpn-guide">GitHub 仓库</a>提 Issue 交流。</p>
+<p>更多手册：<a href="https://chinesevpn.github.io/">← 科学上网手册合集</a> · <a href="https://chinesevpn.github.io/china-vpn-not-working/">国庆敏感期 VPN 连不上自救手册</a></p>
 <p style="opacity:.8">*文中含推广链接，但每条建议都基于真实使用，方案缺点如实写出。</p>
 </footer>
 
