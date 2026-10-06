@@ -59,7 +59,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 "headline":"2026 中国怎么用 ChatGPT / Claude / Gemini？注册、防封号与网络环境手册",
 "inLanguage":"zh-CN",
 "datePublished":"2026-09-21",
-"dateModified":"2026-10-04",
+"dateModified":"2026-10-06",
 "author":{"@type":"Person","name":"AI 访问手册"},
 "description":"在中国大陆稳定使用 ChatGPT、Claude、Gemini：注册要点、封号原因与防封清单、常见报错对照表、网络环境选择。"
 }
@@ -73,6 +73,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 {"@type":"Question","name":"ChatGPT 一直弹 Cloudflare 人机验证怎么办？","acceptedAnswer":{"@type":"Answer","text":"这是 IP 信誉分过低的典型症状，根源是共用该 IP 的人太多太杂。换共用人数少、更干净的网络出口是治本办法，清 Cookie 或换浏览器只能治标。"}},
 {"@type":"Question","name":"ChatGPT / Claude 账号被封还能救回来吗？","acceptedAnswer":{"@type":"Answer","text":"可以走官方申诉表单，如实说明用途。IP 污染类封号有一定申诉成功率，支付欺诈类基本无法恢复。申诉期间不要用同一网络环境注册新账号。"}},
 {"@type":"Question","name":"淘宝、群里卖的 Claude / ChatGPT 中转、镜像站、共享号能用吗？","acceptedAnswer":{"@type":"Answer","text":"不建议。无法确认对面接的是不是正版模型，数据和 API 密钥也不在自己手里；Anthropic 2026 年 9 月的报告披露过以便宜 Claude 为幌子、偷换模型并窃取账号凭据的团伙。"}},
+{"@type":"Question","name":"Gemini 免费版还能用 Pro 模型吗？","acceptedAnswer":{"@type":"Answer","text":"2026 年 10 月 9 日起不能了。个人账号没有订阅的只能用 Flash-Lite，AI Plus 能用 Flash，Pro 需要 AI Pro 或 AI Ultra 订阅。"}},
 {"@type":"Question","name":"在中国用 ChatGPT 选什么样的网络工具？","acceptedAnswer":{"@type":"Answer","text":"AI 场景只看三个指标：出口 IP 干不干净（共用人数）、地区稳不稳定、断线恢复快不快。免费 VPN 共用人数太多基本不可用；选择时确认：有免费试用、能固定地区、有智能分流、断线自动重连、找得到客服。"}}
 ]
 }
@@ -84,7 +85,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <div class="wrap">
 <h1>2026 中国怎么用 <em>ChatGPT / Claude / Gemini</em>？<br>注册、防封号与网络环境手册</h1>
 <p>能看 YouTube 不代表能用 ChatGPT——AI 平台对网络的判定标准完全不同。这份手册整理了在国内使用三大 AI 工具的完整打法：注册要点、封号原因、报错排查、网络环境怎么选。</p>
-<div class="meta">最后核实：2026 年 10 月 4 日 · 长期更新，欢迎收藏 ⭐ · <a href="https://github.com/chinesevpn/chatgpt-vpn-guide">GitHub 版</a></div>
+<div class="meta">最后核实：2026 年 10 月 6 日 · 长期更新，欢迎收藏 ⭐ · <a href="https://github.com/chinesevpn/chatgpt-vpn-guide">GitHub 版</a></div>
 </div>
 </header>
 
@@ -107,6 +108,18 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <section id="news">
 <h2>AI 访问动态（持续更新）</h2>
 <p class="note">这里记录和「在国内用 AI 工具」直接相关的新变化，以及它对你意味着什么。新的在上，旧的往下沉。</p>
+<div class="card">
+<h3>2026-10-06｜Gemini 免费版 10 月 9 日起只剩 Flash-Lite，在国内用 Gemini 的人怎么办</h3>
+<p>Google 在 Gemini 的帮助页面里更新了一张表：从 10 月 9 日起，个人账号如果没有订阅，Gemini App 里只能用 Flash-Lite 一个模型；5 美元一个月的 AI Plus 保留 Flash-Lite 和 Flash；要用 Pro，得是 AI Pro 或 AI Ultra。媒体普遍的解读是算力成本，Pro 这类大模型免费给太多人用，太贵了。</p>
+<p>这件事对国内用户影响比对国外大。很多人用 Gemini，图的就是「有个老 Google 账号就能直接用、还不要钱」，这也是本手册<a href="#signup">注册那一节</a>里说 Gemini 门槛最低的原因。10 月 9 日以后，免费账号还能用，但能力会明显降一档：日常翻译、总结、改写，Flash-Lite 一般够用；写长代码、做复杂推理，差距会比较明显。</p>
+<p><strong>几点实际建议：</strong></p>
+<ul>
+<li><strong>先别急着付费。</strong>10 月 9 日以后先拿自己最常用的几类任务试几天，看 Flash-Lite 够不够，再决定要不要升级。</li>
+<li><strong>真要付费，账号地区、付款方式、出口 IP 三者对齐。</strong>Gemini 走的是 Google 账号的订阅，账号地区一旦定下来很难改，支付地区对不上最容易被拒，具体见<a href="#pay">充值避坑</a>。</li>
+<li><strong>别找代充，也别为了白嫖去批量注册新 Google 账号。</strong>代充多半是盗刷卡，批量注册的新号本来就是风控重点，两条路都容易把你原来的老号一起搭进去，见<a href="#ban">封号原因</a>。</li>
+</ul>
+<p style="font-size:13px;color:var(--muted)">本期参考：<a href="https://support.google.com/gemini/answer/17004136" rel="nofollow">Google 帮助中心</a> · <a href="https://www.engadget.com/2278504/google-removes-free-access-gemini-flash-pro-october-9/" rel="nofollow">Engadget</a> · <a href="https://www.lowyat.net/2026/406282/google-gemini-access-free-ai-plus-users/" rel="nofollow">Lowyat</a></p>
+</div>
 <div class="card">
 <h3>2026-10-04｜Anthropic 9 月安全报告：低价 Claude 中转是怎么坑人的</h3>
 <p>9 月 11 日前后，Anthropic 发了一份滥用情况报告，覆盖去年 12 月到今年 8 月。报告很长，大部分是网络攻击和舆论操纵，和在国内用 AI 的普通人有关的，我挑出三件。</p>
@@ -238,6 +251,8 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <p>不建议，多人异地同时在线是明确风控信号。选支持多设备的网络方案让每人自己注册，比共享账号安全得多。</p></details>
 <details><summary>淘宝、群里卖的 Claude / ChatGPT 中转、镜像站、共享号能用吗？</summary>
 <p>不建议。你没法确认对面接的是不是正版模型，数据和密钥也不在你手里；Anthropic 2026 年 9 月的报告就披露过打着「便宜 Claude」旗号、实际偷换模型还偷账号凭据的团伙。见上面的 <a href="#news">AI 访问动态</a>。</p></details>
+<details><summary>Gemini 免费版还能用 Pro 模型吗？</summary>
+<p>2026 年 10 月 9 日起不能了。个人账号没有订阅的只能用 Flash-Lite，AI Plus 能用 Flash，Pro 要 AI Pro 或 AI Ultra 订阅。见上面的 <a href="#news">AI 访问动态</a>。</p></details>
 <details><summary>敏感时期（十一、重要会议）AI 工具也会受影响吗？</summary>
 <p>会，因为你的网络出口会受影响。规律是敏感日期前一周开始收紧，节后回落。节前把时长充好、备好备用线路。</p></details>
 </section>
