@@ -59,7 +59,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 "headline":"2026 中国怎么用 ChatGPT / Claude / Gemini？注册、防封号与网络环境手册",
 "inLanguage":"zh-CN",
 "datePublished":"2026-09-21",
-"dateModified":"2026-10-06",
+"dateModified":"2026-10-12",
 "author":{"@type":"Person","name":"AI 访问手册"},
 "description":"在中国大陆稳定使用 ChatGPT、Claude、Gemini：注册要点、封号原因与防封清单、常见报错对照表、网络环境选择。"
 }
@@ -73,6 +73,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 {"@type":"Question","name":"ChatGPT 一直弹 Cloudflare 人机验证怎么办？","acceptedAnswer":{"@type":"Answer","text":"这是 IP 信誉分过低的典型症状，根源是共用该 IP 的人太多太杂。换共用人数少、更干净的网络出口是治本办法，清 Cookie 或换浏览器只能治标。"}},
 {"@type":"Question","name":"ChatGPT / Claude 账号被封还能救回来吗？","acceptedAnswer":{"@type":"Answer","text":"可以走官方申诉表单，如实说明用途。IP 污染类封号有一定申诉成功率，支付欺诈类基本无法恢复。申诉期间不要用同一网络环境注册新账号。"}},
 {"@type":"Question","name":"淘宝、群里卖的 Claude / ChatGPT 中转、镜像站、共享号能用吗？","acceptedAnswer":{"@type":"Answer","text":"不建议。无法确认对面接的是不是正版模型，数据和 API 密钥也不在自己手里；Anthropic 2026 年 9 月的报告披露过以便宜 Claude 为幌子、偷换模型并窃取账号凭据的团伙。"}},
+{"@type":"Question","name":"Claude 账号突然被停用，和用 VPN 有关吗？","acceptedAnswer":{"@type":"Answer","text":"很可能有关。Anthropic 不支持中国大陆、香港和澳门，2026 年 10 月起开始成批停用通过 VPN 登录的账号，判断依据包括 IP、连接特征和付款信息。可以登录后走申诉，但成功率不高；没被封的先把重要对话导出来。"}},
 {"@type":"Question","name":"Gemini 免费版还能用 Pro 模型吗？","acceptedAnswer":{"@type":"Answer","text":"2026 年 10 月 9 日起不能了。个人账号没有订阅的只能用 Flash-Lite，AI Plus 能用 Flash，Pro 需要 AI Pro 或 AI Ultra 订阅。"}},
 {"@type":"Question","name":"在中国用 ChatGPT 选什么样的网络工具？","acceptedAnswer":{"@type":"Answer","text":"AI 场景只看三个指标：出口 IP 干不干净（共用人数）、地区稳不稳定、断线恢复快不快。免费 VPN 共用人数太多基本不可用；选择时确认：有免费试用、能固定地区、有智能分流、断线自动重连、找得到客服。"}}
 ]
@@ -85,7 +86,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <div class="wrap">
 <h1>2026 中国怎么用 <em>ChatGPT / Claude / Gemini</em>？<br>注册、防封号与网络环境手册</h1>
 <p>能看 YouTube 不代表能用 ChatGPT——AI 平台对网络的判定标准完全不同。这份手册整理了在国内使用三大 AI 工具的完整打法：注册要点、封号原因、报错排查、网络环境怎么选。</p>
-<div class="meta">最后核实：2026 年 10 月 6 日 · 长期更新，欢迎收藏 ⭐ · <a href="https://github.com/chinesevpn/chatgpt-vpn-guide">GitHub 版</a></div>
+<div class="meta">最后核实：2026 年 10 月 12 日 · 长期更新，欢迎收藏 ⭐ · <a href="https://github.com/chinesevpn/chatgpt-vpn-guide">GitHub 版</a></div>
 </div>
 </header>
 
@@ -108,6 +109,26 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <section id="news">
 <h2>AI 访问动态（持续更新）</h2>
 <p class="note">这里记录和「在国内用 AI 工具」直接相关的新变化，以及它对你意味着什么。新的在上，旧的往下沉。</p>
+<div class="card">
+<h3>2026-10-12｜Claude 10 月起成批封 VPN 登录的账号，ChatGPT 免费版换上 GPT-6</h3>
+<p>这期两件事，一件坏消息，一件好消息。</p>
+<p><strong>一、Claude：香港用户 10 月 1 日起成批被封。</strong></p>
+<p>10 月 1 日开始，不少在香港通过 VPN 用 Claude 的人一登录就看到账号被停用，里面有付费的 Pro 用户，有人说自己已经这样用了半年。《南华早报》报道，有用户收到 Anthropic 安全团队的邮件，说账号有「可疑信号」，按违反使用政策处理。Anthropic 到现在没有公开表态。</p>
+<p>背景要先说清楚：Anthropic 的支持地区名单里本来就没有中国大陆、香港和澳门，名单上写明没列出的地区都不支持，而且看的是人实际在哪，不是 IP 在哪。换句话说，从大陆或香港用 Claude 本来就在它的规则之外，以前查得松，现在开始认真查了。</p>
+<p>港媒和用户总结的触发因素有三类，都是推测，官方没有确认：商业 VPN 常用的数据中心 IP 被成批标记；付款信息和地区对不上，比如香港卡配海外地址、第三方虚拟卡；频繁切换不同国家的节点登录。被封的人说可以登录申诉，但成功率很低，聊天记录也很难导出来。</p>
+<p><strong>我的建议：</strong></p>
+<ul>
+<li><strong>先把重要对话导出来。</strong>Claude 的设置里有导出数据的入口，别等号没了再想起来。这一条比什么都要紧。</li>
+<li><strong>说句实话，没有哪种网络方案能保证 Claude 不封。</strong>这次的检测是 IP、连接特征和别的信号一起看，不是换个节点就能躲开的。本手册<a href="#ban">封号那一节</a>的老规矩照样有用：固定一个地区、别来回切节点、付款方式和账号地区对齐。这些能降低风险，但降不到零。</li>
+<li><strong>别把工作全压在 Claude 一家上。</strong>重要的工作流准备好 ChatGPT 或 Gemini 做备用，提示词和文档存在自己手里。</li>
+<li><strong>被封以后别马上用同一套网络和付款方式注册新号</strong>，新号大概率活不长，见 <a href="#faq">FAQ</a>。</li>
+</ul>
+<p>OpenAI 的支持地区名单同样不含大陆和香港。它会不会跟着这么做，现在不知道，但最好别当成不会发生。</p>
+<p><strong>二、ChatGPT：免费版 10 月 8 日起换上 GPT-6。</strong></p>
+<p>OpenAI 10 月 7 日发布 GPT-6，付费用户当天用上 GPT-6 Sol，免费和 Go 用户从 10 月 8 日起用上轻一档的 GPT-6 Luna。上期说过，Gemini 免费版 10 月 9 日起降到只剩 Flash-Lite，这个月两家的免费版正好一升一降。如果你只打算用免费版，这个月 ChatGPT 明显更划算。</p>
+<p>顺带一条小消息：OpenAI 10 月 5 日宣布，免费和低价档用户生成图片时会出现广告，这个月先在美国上线，以后会扩到更多地区。</p>
+<p style="font-size:13px;color:var(--muted)">本期参考：<a href="https://www.scmp.com/tech/tech-war/article/3369526/hong-kong-users-caught-offguard-anthropic-tightens-vpn-access-claude" rel="nofollow">南华早报</a> · <a href="https://www.newmobilelife.com/2026/10/01/claude-bans-hk-user/" rel="nofollow">流動日報</a> · <a href="https://www.pcmarket.com.hk/anthropic-claude-blocks-vpn-hong-kong-users-account-ban/" rel="nofollow">PCM</a> · <a href="https://www.anthropic.com/supported-countries" rel="nofollow">Anthropic 支持地区名单</a> · <a href="https://openai.com/index/gpt-6-for-everyone/" rel="nofollow">OpenAI</a> · <a href="https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/" rel="nofollow">TechCrunch</a></p>
+</div>
 <div class="card">
 <h3>2026-10-06｜Gemini 免费版 10 月 9 日起只剩 Flash-Lite，在国内用 Gemini 的人怎么办</h3>
 <p>Google 在 Gemini 的帮助页面里更新了一张表：从 10 月 9 日起，个人账号如果没有订阅，Gemini App 里只能用 Flash-Lite 一个模型；5 美元一个月的 AI Plus 保留 Flash-Lite 和 Flash；要用 Pro，得是 AI Pro 或 AI Ultra。媒体普遍的解读是算力成本，Pro 这类大模型免费给太多人用，太贵了。</p>
@@ -251,6 +272,8 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <p>不建议，多人异地同时在线是明确风控信号。选支持多设备的网络方案让每人自己注册，比共享账号安全得多。</p></details>
 <details><summary>淘宝、群里卖的 Claude / ChatGPT 中转、镜像站、共享号能用吗？</summary>
 <p>不建议。你没法确认对面接的是不是正版模型，数据和密钥也不在你手里；Anthropic 2026 年 9 月的报告就披露过打着「便宜 Claude」旗号、实际偷换模型还偷账号凭据的团伙。见上面的 <a href="#news">AI 访问动态</a>。</p></details>
+<details><summary>Claude 账号突然被停用，和用 VPN 有关吗？</summary>
+<p>很可能有关。Anthropic 不支持中国大陆、香港和澳门，2026 年 10 月起开始成批停用通过 VPN 登录的账号，判断依据包括 IP、连接特征和付款信息。可以登录后走申诉，但成功率不高；没被封的先把重要对话导出来。见上面的 <a href="#news">AI 访问动态</a>。</p></details>
 <details><summary>Gemini 免费版还能用 Pro 模型吗？</summary>
 <p>2026 年 10 月 9 日起不能了。个人账号没有订阅的只能用 Flash-Lite，AI Plus 能用 Flash，Pro 要 AI Pro 或 AI Ultra 订阅。见上面的 <a href="#news">AI 访问动态</a>。</p></details>
 <details><summary>敏感时期（十一、重要会议）AI 工具也会受影响吗？</summary>
