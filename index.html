@@ -59,7 +59,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 "headline":"2026 中国怎么用 ChatGPT / Claude / Gemini？注册、防封号与网络环境手册",
 "inLanguage":"zh-CN",
 "datePublished":"2026-09-21",
-"dateModified":"2026-10-12",
+"dateModified":"2026-10-16",
 "author":{"@type":"Person","name":"AI 访问手册"},
 "description":"在中国大陆稳定使用 ChatGPT、Claude、Gemini：注册要点、封号原因与防封清单、常见报错对照表、网络环境选择。"
 }
@@ -73,6 +73,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 {"@type":"Question","name":"ChatGPT 一直弹 Cloudflare 人机验证怎么办？","acceptedAnswer":{"@type":"Answer","text":"这是 IP 信誉分过低的典型症状，根源是共用该 IP 的人太多太杂。换共用人数少、更干净的网络出口是治本办法，清 Cookie 或换浏览器只能治标。"}},
 {"@type":"Question","name":"ChatGPT / Claude 账号被封还能救回来吗？","acceptedAnswer":{"@type":"Answer","text":"可以走官方申诉表单，如实说明用途。IP 污染类封号有一定申诉成功率，支付欺诈类基本无法恢复。申诉期间不要用同一网络环境注册新账号。"}},
 {"@type":"Question","name":"淘宝、群里卖的 Claude / ChatGPT 中转、镜像站、共享号能用吗？","acceptedAnswer":{"@type":"Answer","text":"不建议。无法确认对面接的是不是正版模型，数据和 API 密钥也不在自己手里；Anthropic 2026 年 9 月的报告披露过以便宜 Claude 为幌子、偷换模型并窃取账号凭据的团伙。"}},
+{"@type":"Question","name":"Claude 出了中文界面，是不是在大陆也能用了？","acceptedAnswer":{"@type":"Answer","text":"不是。2026 年 10 月 Claude 上线了简体中文界面，付款页也能选中国，但 Anthropic 的支持地区名单没变，依然不含中国大陆、香港和澳门，官方也没有任何开放大陆的说法。同一时间大陆用户的封号还在继续，别因为中文界面去充年费。"}},
 {"@type":"Question","name":"Claude 账号突然被停用，和用 VPN 有关吗？","acceptedAnswer":{"@type":"Answer","text":"很可能有关。Anthropic 不支持中国大陆、香港和澳门，2026 年 10 月起开始成批停用通过 VPN 登录的账号，判断依据包括 IP、连接特征和付款信息。可以登录后走申诉，但成功率不高；没被封的先把重要对话导出来。"}},
 {"@type":"Question","name":"Gemini 免费版还能用 Pro 模型吗？","acceptedAnswer":{"@type":"Answer","text":"2026 年 10 月 9 日起不能了。个人账号没有订阅的只能用 Flash-Lite，AI Plus 能用 Flash，Pro 需要 AI Pro 或 AI Ultra 订阅。"}},
 {"@type":"Question","name":"在中国用 ChatGPT 选什么样的网络工具？","acceptedAnswer":{"@type":"Answer","text":"AI 场景只看三个指标：出口 IP 干不干净（共用人数）、地区稳不稳定、断线恢复快不快。免费 VPN 共用人数太多基本不可用；选择时确认：有免费试用、能固定地区、有智能分流、断线自动重连、找得到客服。"}}
@@ -86,7 +87,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <div class="wrap">
 <h1>2026 中国怎么用 <em>ChatGPT / Claude / Gemini</em>？<br>注册、防封号与网络环境手册</h1>
 <p>能看 YouTube 不代表能用 ChatGPT——AI 平台对网络的判定标准完全不同。这份手册整理了在国内使用三大 AI 工具的完整打法：注册要点、封号原因、报错排查、网络环境怎么选。</p>
-<div class="meta">最后核实：2026 年 10 月 12 日 · 长期更新，欢迎收藏 ⭐ · <a href="https://github.com/chinesevpn/chatgpt-vpn-guide">GitHub 版</a></div>
+<div class="meta">最后核实：2026 年 10 月 16 日 · 长期更新，欢迎收藏 ⭐ · <a href="https://github.com/chinesevpn/chatgpt-vpn-guide">GitHub 版</a></div>
 </div>
 </header>
 
@@ -109,6 +110,25 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <section id="news">
 <h2>AI 访问动态（持续更新）</h2>
 <p class="note">这里记录和「在国内用 AI 工具」直接相关的新变化，以及它对你意味着什么。新的在上，旧的往下沉。</p>
+<div class="card">
+<h3>2026-10-16｜Claude 上了中文界面，但不等于对大陆开放；大陆封号还在继续</h3>
+<p><strong>一、中文界面是真的，「开放大陆」不是。</strong></p>
+<p>10 月 7 日前后，Claude 的网页版和桌面版出现了简体中文界面，菜单、按钮、设置都是中文；付款页的国家列表里也能选「中国」。国内不少公众号一转，就成了「Claude 对中国开放了」。</p>
+<p>我核对了一下：Anthropic 的支持地区名单没有变，里面依然没有中国大陆、香港和澳门。简体中文的用户本来就不只在大陆，新加坡、马来西亚的华人也用；付款页的国家下拉框更说明不了什么，有网友指出那是支付服务商的通用模板。到目前为止，Anthropic 没有任何官方说法表示要对大陆开放。</p>
+<p><strong>二、同一时间，大陆用户的封号还在继续。</strong></p>
+<p>10 月 15、16 日，V2EX 上又出现了几个「Claude 被封」的帖子：有人用了将近一年的 Max 会员，开着 VPN 加美国信用卡，没收到任何警告就被停用；有人一个月里连封三个号。回帖里有人说重新注册时提示「暂不接受新用户」。这些都是网友的个人经历，不代表官方规则，但方向和上期说的香港封号潮是一致的。</p>
+<p><strong>三、弹出身份验证时，先想清楚再上传。</strong></p>
+<p>V2EX 那个帖子里，楼主第三个号一登录就被要求做身份验证，用中国护照验证后两个小时被封，回帖里也有人说遇到过类似情况。背景是这样的：Anthropic 从今年 7 月 8 日起在隐私政策里写明，对被系统标记、但还没直接封掉的账号，可能要求上传护照或驾照，再加一张自拍或一段视频，由一家叫 Persona 的第三方公司处理。</p>
+<p>所以要知道两点：一是验证材料会交给第三方公司保存，保存多久 Anthropic 没有公开说；二是在一个不支持你所在地区的服务上做实名验证，等于把你在哪告诉对方。上不上传是你自己的判断，但别以为上传了就能保住号。也绝对不要用别人的证件去验证，那是另一个层面的风险。</p>
+<p><strong>我的建议，和上期基本一样：</strong></p>
+<ul>
+<li><strong>重要对话定期导出</strong>，号随时可能没；</li>
+<li><strong>别被中文界面带节奏去充年费</strong>，规则没变；</li>
+<li><strong>准备好替代方案</strong>。V2EX 回帖里不少人已经转去用 ChatGPT 和 Codex，体验上各有说法，但至少别只押一家；</li>
+<li><strong>别碰号称「Claude 中转」的低价服务</strong>，被封的人多了，这类东西会更多，风险见 <a href="#news">10 月 4 日那期</a>。</li>
+</ul>
+<p style="font-size:13px;color:var(--muted)">本期参考：<a href="https://finance.sina.cn/2026-10-07/detail-iniuiewy6700392.d.html?vt=4" rel="nofollow">新智元</a> · <a href="https://www.anthropic.com/supported-countries" rel="nofollow">Anthropic 支持地区名单</a> · <a href="https://v2ex.com/t/1246660" rel="nofollow">V2EX 讨论 1</a> · <a href="https://www.v2ex.com/t/1249237" rel="nofollow">V2EX 讨论 2</a> · <a href="https://global.v2ex.com/t/1249123" rel="nofollow">V2EX 讨论 3</a> · <a href="https://techcrunch.com/2026/06/22/anthropic-says-claude-may-want-to-see-your-id/" rel="nofollow">TechCrunch</a></p>
+</div>
 <div class="card">
 <h3>2026-10-12｜Claude 10 月起成批封 VPN 登录的账号，ChatGPT 免费版换上 GPT-6</h3>
 <p>这期两件事，一件坏消息，一件好消息。</p>
@@ -272,6 +292,8 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 52px;colo
 <p>不建议，多人异地同时在线是明确风控信号。选支持多设备的网络方案让每人自己注册，比共享账号安全得多。</p></details>
 <details><summary>淘宝、群里卖的 Claude / ChatGPT 中转、镜像站、共享号能用吗？</summary>
 <p>不建议。你没法确认对面接的是不是正版模型，数据和密钥也不在你手里；Anthropic 2026 年 9 月的报告就披露过打着「便宜 Claude」旗号、实际偷换模型还偷账号凭据的团伙。见上面的 <a href="#news">AI 访问动态</a>。</p></details>
+<details><summary>Claude 出了中文界面，是不是在大陆也能用了？</summary>
+<p>不是。2026 年 10 月 Claude 上线了简体中文界面，付款页也能选中国，但 Anthropic 的支持地区名单没变，依然不含中国大陆、香港和澳门，官方也没有任何开放大陆的说法。同一时间大陆用户的封号还在继续，别因为中文界面去充年费。见上面的 <a href="#news">AI 访问动态</a>。</p></details>
 <details><summary>Claude 账号突然被停用，和用 VPN 有关吗？</summary>
 <p>很可能有关。Anthropic 不支持中国大陆、香港和澳门，2026 年 10 月起开始成批停用通过 VPN 登录的账号，判断依据包括 IP、连接特征和付款信息。可以登录后走申诉，但成功率不高；没被封的先把重要对话导出来。见上面的 <a href="#news">AI 访问动态</a>。</p></details>
 <details><summary>Gemini 免费版还能用 Pro 模型吗？</summary>
